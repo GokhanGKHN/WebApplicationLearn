@@ -47,3 +47,37 @@ HTTP'nin açılış **Hyper Text Transfer Protocol'dür.** "Hypertext" terimi, b
 | POST   | Bir kaynağı oluşturmak için kullanılır |
 | PUT    | Bir kaynağı güncellemek için kullanılır |
 | DELETE | Bir kaynağı silmek için kullanılır |
+
+**HTTP status code (Durum Kodları)**
+
+| 1xx: Kod | Açıklama (Bilgi)       |
+|----------|------------------------|
+| 100      | Continue               |
+| 101      | Switching Protocols    |
+| 102      | Processing             |
+
+| 2xx: Kod | Açıklama (Başarı)      |
+|----------|------------------------|
+| 200      | Ok                     |
+| 201      | Created                |
+| 204      | No Content             |
+
+| 3xx: Kod | Açıklama (Yönlendime)  |
+|----------|------------------------|
+| 301      | Ok                     |
+| 302      | Created                |
+| 305      | Use Proxy              |
+
+| 4xx: Kod | Açıklama (Client Hata)      |
+|----------|------------------------|
+| 400      | Bad Request                     |
+| 401      | Unauthorized                |
+| 405      | Method Not Allowed             |
+
+| 5xx: Kod | Açıklama (Client Hata)      |
+|----------|------------------------|
+| 500      | Internal Server Error                   |
+| 501      | Not Implemented               |
+| 503      | Service Unavailable           |
+
+
