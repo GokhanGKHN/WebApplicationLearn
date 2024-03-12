@@ -101,6 +101,15 @@ Sunucu talep edilen işlemi tamamladıktan sonra bir HTTP yanıtı oluşturur. Y
 ---
 
 **HTTP HEADER ve BODY Nedir?***
+HTTP başlıkları (headers) ve gövdesi (body), HTTP iletişimi sırasında taşınan bilgilerin iki ana bileşenidir:
+
+**HTTP Başlıkları (HTTP Headers):**
+
+HTTP başlıkları, istek veya yanıtın (response) meta bilgilerini içerir. Başlıklar, istek veya yanıtın niteliklerini, içeriğini, sunucu özelliklerini ve daha fazlasını tanımlar. Örneğin, ***isteğin hedefi (Host)***, ***kabul edilebilir içerik türleri (Accept)***, ***istemci bilgisi (User-Agent)*** gibi bilgileri içerebilirler. Başlıklar, anahtar-değer çiftleri şeklinde gelir ve her bir başlık bir ihtiyacı veya özelliği tanımlar.
+
+**HTTP Gövdesi (HTTP Body):**
+
+HTTP gövdesi, istek veya yanıtın (response) ana içeriğini taşır. İstek gövdesi, genellikle istemci tarafından sunucuya gönderilen verileri içerir. Örneğin, bir web formunun doldurulması sonucunda gönderilen veriler, bir dosya yükleme isteği veya bir API talebi gibi. Yanıt gövdesi ise sunucudan istemciye gelen veriyi içerir. Örneğin, bir web sayfasının HTML içeriği, bir resim dosyası veya bir JSON verisi gibi. Gövde, isteğin veya yanıtın içeriğine göre değişebilir ve bazen boş olabilir. Gövde, başlık bölümünden ayrı olarak gelir ve genellikle istek veya yanıtın sonunda yer alır. Gövde, metin, resim, video, JSON veya XML gibi farklı veri türlerini içerebilir.
 
 **HTTP REQUEST**
 
