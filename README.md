@@ -126,5 +126,6 @@ HTTP gövdesi, istek veya yanıtın (response) ana içeriğini taşır. İstek g
     -
     Bu başlık, istemcinin sunucudan almayı kabul ettiği içerik kodlamalarını belirtir. Örneğin, "gzip" veya "deflate" gibi sıkıştırma algoritmalarını belirtebilir. Sunucu, içeriği sıkıştırarak, veri transferini azaltabilir ve daha hızlı yanıtlar sağlayabilir. Bu başlık, istemcinin sıkıştırılmış içeriği kabul edip etmediğini belirtir.
 
+**Not:**
 GET isteiğinde BODY yer almaz. 
 PUT, POST gibi metot istekleri BODY alanı ile beraber yapılır. 
