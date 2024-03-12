@@ -64,8 +64,8 @@ HTTP'nin açılış **Hyper Text Transfer Protocol'dür.** "Hypertext" terimi, b
 
 | 3xx: Kod | Açıklama (Yönlendime)  |
 |----------|------------------------|
-| 301      | Ok                     |
-| 302      | Created                |
+| 301      | Moved Permanently                     |
+| 302      | Found                |
 | 305      | Use Proxy              |
 
 | 4xx: Kod | Açıklama (Client Hata)      |
@@ -74,7 +74,7 @@ HTTP'nin açılış **Hyper Text Transfer Protocol'dür.** "Hypertext" terimi, b
 | 401      | Unauthorized                |
 | 405      | Method Not Allowed             |
 
-| 5xx: Kod | Açıklama (Client Hata)      |
+| 5xx: Kod | Açıklama (Sunucu Hata)      |
 |----------|------------------------|
 | 500      | Internal Server Error                   |
 | 501      | Not Implemented               |
