@@ -97,3 +97,22 @@ Sunucu, isteği aldıktan sonra talep edilen kaynağı bulur ve gerekli işlemle
 
 **Response (Yanıt):**
 Sunucu talep edilen işlemi tamamladıktan sonra bir HTTP yanıtı oluşturur. Yanıt, sunucunun yaptığı işlemlerin sonucunu içerir.
+
+---
+
+**HTTP HEADER ve BODY Nedir?***
+
+**HTTP REQUEST**
+
+- Host
+    -
+    Bir HTTP isteğinin hedefi olan sunucunun host adını belirtir. Bu genellikle bir IP adresi veya bir alan adı olabilir. Örneğin, "www.example.com" gibi bir alan adı veya "192.0.2.1" gibi bir IP adresi olabilir. Bu, sunucunun talebin gönderildiği belirli bir adresi belirtir ve sunucunun doğru kaynaklara yönlendirilmesini sağlar.
+- Accept
+    -
+    Bu başlık, istemcinin (genellikle tarayıcı) sunucuya hangi medya türlerini veya dosya türlerini alabileceğini belirtir. Örneğin, bir web tarayıcısı HTML belgelerini, görsel resim dosyalarını veya JSON verilerini kabul edebilir. Sunucu, bu başlıkta belirtilen formatlarda yanıtlar döndürebilir veya dönmeden önce uygun bir formata dönüştürebilir.
+- User-Agent
+    - 
+    Bu, istemcinin (tarayıcı veya uygulama) kendini sunucuya tanımladığı bir dizedir. Genellikle, tarayıcı adı ve sürümü, işletim sistemi ve diğer istemci özelliklerini içerir. Sunucu, bu bilgileri kullanarak, kullanıcı deneyimini iyileştirmek veya tarayıcıya uygun içerik sunmak için istemci hakkında daha fazla bilgi edinebilir.
+- Accept-Encoding
+    -
+    Bu başlık, istemcinin sunucudan almayı kabul ettiği içerik kodlamalarını belirtir. Örneğin, "gzip" veya "deflate" gibi sıkıştırma algoritmalarını belirtebilir. Sunucu, içeriği sıkıştırarak, veri transferini azaltabilir ve daha hızlı yanıtlar sağlayabilir. Bu başlık, istemcinin sıkıştırılmış içeriği kabul edip etmediğini belirtir.
