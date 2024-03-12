@@ -1,5 +1,11 @@
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API Nedir?</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -38,3 +44,5 @@
         <p>Web API'ler, farklı platformlar arasında iletişim kurmak için kullanılır. Örneğin, bir web uygulaması mobil uygulama, masaüstü uygulaması veya başka bir web uygulaması ile veri alışverişi yapabilir.</p>
         <p>Özetlemek gerekirse, <strong>Web API'ler</strong>, yazılım uygulamaları arasında veri ve işlem alışverişi yapmak için kullanılan bir arayüzdür ve genellikle HTTP protokolü üzerinden erişilebilir.</p>
     </div>
+</body>
+</html>
