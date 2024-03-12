@@ -128,4 +128,4 @@ HTTP gövdesi, istek veya yanıtın (response) ana içeriğini taşır. İstek g
 
 **Not:**
 GET isteiğinde BODY yer almaz. 
-PUT, POST gibi metot istekleri BODY alanı ile beraber yapılır. 
+PUT, POST gibi metot istekleri BODY alanı ile beraber yapılır. Bunun sebebi ***GET*** işlemi okuma amaçlı yapılan bir işlem bu nedenle body yer almaz. ***PUT,POST ve DELETE*** data gönderileceği için datayı tutacak bir request body'ninde olması gerekir. 
