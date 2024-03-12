@@ -129,3 +129,16 @@ HTTP gövdesi, istek veya yanıtın (response) ana içeriğini taşır. İstek g
 **Not:**
 GET isteiğinde BODY yer almaz. 
 PUT, POST gibi metot istekleri BODY alanı ile beraber yapılır. Bunun sebebi ***GET*** işlemi okuma amaçlı yapılan bir işlem bu nedenle body yer almaz. ***PUT,POST ve DELETE*** data gönderileceği için datayı tutacak bir request body'ninde olması gerekir. 
+
+
+---
+
+**ASP.Net Web Api Routing  nedir?**
+
+ASP.NET Web API, Microsoft tarafından sunulan bir framework'tür ve HTTP protokolü üzerinden web servislerini oluşturmak için kullanılır. Web API, RESTful web servisleri oluşturmak için özellikle uygun bir şekilde tasarlanmıştır. Bu framework, ASP.NET MVC'nin avantajlarını kullanarak, web API'lerini oluşturmak ve yönetmek için kolay ve esnek bir yol sunar.
+
+ASP.NET Web API Routing ise, Web API'de gelen isteklerin hangi yöntemlerle ve hangi kontrolcülerle eşleştirileceğini belirleyen bir mekanizmadır. Routing, gelen HTTP isteğinin URL'sine bakarak, hangi denetleyicinin ve eylemin işleneceğini belirler. Bu, Web API'nin, isteklerin doğru eyleme yönlendirilmesini sağlamak için kullanılan temel bir bileşenidir.
+
+Örneğin, bir HTTP GET isteği "/api/products" URL'sine yönlendirildiğinde, Web API routing'i, bu isteği ProductsController içindeki bir GET metoduyla eşleştirebilir ve istemciye ürünlerin listesini döndürebilir.
+
+Routing, RESTful prensiplere uygun bir şekilde, HTTP yöntemlerine (GET, POST, PUT, DELETE vb.) ve URL yapılarına dayalı olarak istekleri işleyerek, uygulamanın doğru davranışını sağlar. Bu şekilde, gelen isteklerin nasıl işleneceğini kontrol etmek ve yönlendirmek için esneklik sağlar.
