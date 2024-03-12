@@ -142,3 +142,85 @@ ASP.NET Web API Routing ise, Web API'de gelen isteklerin hangi yöntemlerle ve h
 Örneğin, bir HTTP GET isteği "/api/products" URL'sine yönlendirildiğinde, Web API routing'i, bu isteği ProductsController içindeki bir GET metoduyla eşleştirebilir ve istemciye ürünlerin listesini döndürebilir.
 
 Routing, RESTful prensiplere uygun bir şekilde, HTTP yöntemlerine (GET, POST, PUT, DELETE vb.) ve URL yapılarına dayalı olarak istekleri işleyerek, uygulamanın doğru davranışını sağlar. Bu şekilde, gelen isteklerin nasıl işleneceğini kontrol etmek ve yönlendirmek için esneklik sağlar.
+
+---
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace ProductApi.Controllers
+{
+    public class ProductsController : ApiController
+    {
+        private static List<Product> products = new List<Product>
+        {
+            new Product { Id = 1, Name = "Laptop", Price = 999.99 },
+            new Product { Id = 2, Name = "Smartphone", Price = 599.99 },
+            new Product { Id = 3, Name = "Headphones", Price = 99.99 }
+        };
+
+        // GET api/products
+        public IHttpActionResult GetProducts()
+        {
+            return Ok(products);
+        }
+
+        // GET api/products/{id}
+        public IHttpActionResult GetProduct(int id)
+        {
+            var product = products.FirstOrDefault(p => p.Id == id);
+            if (product == null)
+                return NotFound();
+
+            return Ok(product);
+        }
+
+        // POST api/products
+        public IHttpActionResult PostProduct(Product product)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            products.Add(product);
+            return CreatedAtRoute("DefaultApi", new { id = product.Id }, product);
+        }
+
+        // PUT api/products/{id}
+        public IHttpActionResult PutProduct(int id, Product product)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var existingProduct = products.FirstOrDefault(p => p.Id == id);
+            if (existingProduct == null)
+                return NotFound();
+
+            existingProduct.Name = product.Name;
+            existingProduct.Price = product.Price;
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // DELETE api/products/{id}
+        public IHttpActionResult DeleteProduct(int id)
+        {
+            var product = products.FirstOrDefault(p => p.Id == id);
+            if (product == null)
+                return NotFound();
+
+            products.Remove(product);
+            return Ok(product);
+        }
+    }
+
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+    }
+}
+---
