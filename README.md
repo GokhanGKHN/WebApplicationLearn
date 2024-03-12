@@ -1,0 +1,49 @@
+# Herkese selamlar! 👋
+
+Bu projede Web API üzerine eğiliyor olacağım. Hem kendime hatırlatmak için hem de faydalanmak isteyenler için hazırlıyorum, umarım faydalı olur.
+
+Öncelikle **Web API Nedir?** Bu kavram üzerinde başlangıç yapmak daha yararlı olacaktır.
+
+**Web API (Web Application Programming Interface)**, bir yazılım uygulamasının diğer yazılım uygulamalarıyla iletişim kurmasını sağlayan bir arayüzdür. Genellikle HTTP protokolü üzerinden erişilebilir ve web tabanlı hizmetlerin (web servisleri) bir türü olarak kullanılır.
+
+Web API'ler, istemci uygulamalarının sunucu tarafında bulunan verilere veya işlemlere erişmesine olanak tanır. Genellikle *REST (Representational State Transfer)* mimarisine dayanır ve CRUD (Create, Read, Update, Delete) operasyonlarını destekler. Bu, web API'lerinin veri oluşturma, okuma, güncelleme ve silme işlemlerini gerçekleştirmek için kullanılabileceği anlamına gelir.
+
+Web API'ler, farklı platformlar arasında iletişim kurmak için kullanılır. Örneğin, bir web uygulaması mobil uygulama, masaüstü uygulaması veya başka bir web uygulaması ile veri alışverişi yapabilir.
+
+Özetlemek gerekirse, **Web API'ler**, yazılım uygulamaları arasında veri ve işlem alışverişi yapmak için kullanılan bir arayüzdür ve genellikle HTTP protokolü üzerinden erişilebilir.
+
+---
+
+**Neden Web API'i Seçmeliyiz?**
+
+- Bir web service'e ihtiyacınız varsa ve SOAP'a ihtiyacınız yoksa en iyi seçenek Web API'dir
+- Geliştirme süreci WCF de olduğu kadar zahmetli ve sıkıntılı değildir
+- HTTP tabanlı olduğundan REST-ful servisler geliştirmek için en iyi seçenektir.
+- Exception ve Cahce mimarileri oldukça performanslı ve yönetilebilir dir.
+- Open source olduğundan sürekli olarak geliştirilip yeni özellikler eklenmektedir.
+
+---
+
+**Kullanım alanları nelerdir?**
+
+- Mobil uygulamalar.
+- SPA(Single Page Application) Web siteleri
+- Entegrasyonlar
+- Bir uygulamanın geliştiricilere açılması
+
+---
+
+**HTTP protokolü**
+
+HTTP'nin açılış **Hyper Text Transfer Protocol'dür.** "Hypertext" terimi, bağlantılarla zenginleştirilmiş metinleri ifade ederken, "Transfer Protocol" ise verilerin iletimi için kullanılan bir protokol anlamına gelir.
+
+---
+
+**HTTP metotları**
+
+| Method | Amaç                             |
+|--------|----------------------------------|
+| GET    | Bir kaynağı almak için kullanılır |
+| POST   | Bir kaynağı oluşturmak için kullanılır |
+| PUT    | Bir kaynağı güncellemek için kullanılır |
+| DELETE | Bir kaynağı silmek için kullanılır |
