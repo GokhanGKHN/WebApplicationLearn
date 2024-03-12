@@ -148,9 +148,9 @@ Diyelim ki bir e-ticaret uygulaması yapıyorsunuz ve ürünlerin API'sini oluş
 
 Ürünleri Listeleme (GET isteği):
 
--URL: /api/products
--HTTP Metodu: GET
--Bu URL'ye gelen bir GET isteği, tüm ürünleri listeleyen bir API işlemini tetikleyecektir.
+    -URL: /api/products
+    -HTTP Metodu: GET
+    -Bu URL'ye gelen bir GET isteği, tüm ürünleri listeleyen bir API işlemini tetikleyecektir.
 
 ---
 
