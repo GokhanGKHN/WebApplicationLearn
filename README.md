@@ -146,11 +146,24 @@ Routing, RESTful prensiplere uygun bir şekilde, HTTP yöntemlerine (GET, POST, 
 
 Diyelim ki bir e-ticaret uygulaması yapıyorsunuz ve ürünlerin API'sini oluşturmak istiyorsunuz. Ürünlerle ilgili birkaç temel işlem yapmanız gerekecek: ürünleri listeleyebilirsiniz, belirli bir ürünü alabilirsiniz, yeni bir ürün ekleyebilirsiniz, mevcut bir ürünü güncelleyebilirsiniz veya silebilirsiniz.
 
-Ürünleri Listeleme (GET isteği):
+Ürünleri Listeleme (**GET** isteği):
 
     -URL: /api/products
     -HTTP Metodu: GET
     -Bu URL'ye gelen bir GET isteği, tüm ürünleri listeleyen bir API işlemini tetikleyecektir.
+
+
+Belirli bir Ürünü Alma (**GET** isteği):
+
+    -URL: /api/products/{id}
+    -HTTP Metodu: GET
+    -Burada "{id}" yolu, belirli bir ürünün kimliğini temsil eder. Örneğin, /api/products/123 URL'sine gelen bir GET isteği, id'si 123 olan bir ürünün detaylarını getiren bir API işlemini tetikleyecektir.
+
+Yeni Bir Ürün Ekleme (**POST** isteği):
+
+    -URL: /api/products
+    -HTTP Metodu: POST
+    -Bu URL'ye gelen bir POST isteği, yeni bir ürün eklemek için bir API işlemini tetikleyecektir.
 
 ---
 
