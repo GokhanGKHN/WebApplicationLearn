@@ -1,10 +1,5 @@
 <H1>ASP.NET Web API</H1>
-<p>Herkese selmalar 👋. Bu projede Web Api üzerine eğiliyor olacağım. Hem kendime hatırlatma için hemde faydalanmak isteyenler için hazılıyorum, umarım faydalı olur. 
-</p>
- <h2>Asp.Net Nedir? Ne değildir. </h2>
-<p>Herkese selmalar 👋. Bu projede Web Api üzerine eğiliyor olacağım. Hem kendime hatırlatma için hemde faydalanmak isteyenler için hazılıyorum <br/> 
-    umarı faydalı olur. <br> 
-    </p>
+<p>Herkese selmalar 👋. Bu projede Web Api üzerine eğiliyor olacağım. Hem kendime hatırlatma için hemde faydalanmak isteyenler için hazılıyorum, umarım faydalı olur. umarı faydalı olur. <br> </p>
     <p> Öncelikle Wep Api Nedir? Bu kavram üzerinde başlangıç yapmak daha yararlı olacaktır <br/> </p>
     <p>
         Web API (Web Application Programming Interface), bir yazılım uygulamasının diğer yazılım uygulamalarıyla iletişim kurmasını sağlayan bir arayüzdür. Genellikle HTTP protokolü üzerinden erişilebilir ve web tabanlı hizmetlerin (web servisleri) bir türü olarak kullanılır.
