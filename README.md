@@ -81,7 +81,9 @@ HTTP'nin açılış **Hyper Text Transfer Protocol'dür.** "Hypertext" terimi, b
 | 503      | Service Unavailable           |
 
 **HTTP Nasıl Çalışır**
-HTTP’nin çalışma prensibi istemci(client) — sunucu(server) ilişkisine dayanmaktadır. Bu çalışma prensibini açıklamak gerekirse:
+HTTP’nin çalışma prensibi istemci(client) — sunucu(server) ilişkisine dayanmaktadır. 
+
+Bu çalışma prensibini açıklamak gerekirse:
 
 **Request (İstek):**
 Kullanıcı bir web sayfasını görüntülemek, dosya indirmek veya form göndermek gibi bir işlemi gerçekleştirmek istediğinde istemci (client yani tarayıcı) bir HTTP isteği yapar. İstek, belirli bir kaynağı (örneğin bir web sayfasını) talep eden bir mesajdır. Bu mesaj, isteğin türünü (GET, POST gibi) ve talep edilen kaynağın adresini içerir.
