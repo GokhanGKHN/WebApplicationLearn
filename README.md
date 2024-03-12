@@ -48,6 +48,8 @@ HTTP'nin açılış **Hyper Text Transfer Protocol'dür.** "Hypertext" terimi, b
 | PUT    | Bir kaynağı güncellemek için kullanılır |
 | DELETE | Bir kaynağı silmek için kullanılır |
 
+---
+
 **HTTP status code (Durum Kodları)**
 
 | 1xx: Kod | Açıklama (Bilgi)       |
@@ -79,6 +81,8 @@ HTTP'nin açılış **Hyper Text Transfer Protocol'dür.** "Hypertext" terimi, b
 | 500      | Internal Server Error                   |
 | 501      | Not Implemented               |
 | 503      | Service Unavailable           |
+
+---
 
 **HTTP Nasıl Çalışır**
 HTTP’nin çalışma prensibi istemci(client) — sunucu(server) ilişkisine dayanmaktadır. 
