@@ -144,14 +144,14 @@ ASP.NET Web API Routing ise, Web API'de gelen isteklerin hangi yöntemlerle ve h
 Routing, RESTful prensiplere uygun bir şekilde, HTTP yöntemlerine (GET, POST, PUT, DELETE vb.) ve URL yapılarına dayalı olarak istekleri işleyerek, uygulamanın doğru davranışını sağlar. Bu şekilde, gelen isteklerin nasıl işleneceğini kontrol etmek ve yönlendirmek için esneklik sağlar.
 
 ---
-***using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;***
+using System.Web.Http;
 
-**namespace ProductApi.Controllers
+namespace ProductApi.Controllers
 {
     public class ProductsController : ApiController
     {
@@ -223,5 +223,5 @@ using System.Web.Http;***
         public double Price { get; set; }
     }
 }
-**
+
 ---
