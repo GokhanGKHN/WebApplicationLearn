@@ -303,7 +303,7 @@ static List<string> degerler = new List<string>()
 
 
 
-// GET api/values
+ GET api/values
 public IEnumerable<string> Get()
 {
     return degerler;
@@ -312,7 +312,7 @@ public IEnumerable<string> Get()
 
 
 
-// GET api/values/5
+ GET api/values/5
 public string Get(int id)
 {
     return degerler[id];
@@ -320,7 +320,7 @@ public string Get(int id)
 
 
 
-// POST api/values
+ POST api/values
 public void Post([FromBody] string value)
 {
     degerler.Add(value);
@@ -328,7 +328,7 @@ public void Post([FromBody] string value)
 
 
 
-// PUT api/values/5
+ PUT api/values/5
 public void Put(int id, [FromBody] string value)
 {
     degerler[id] = value;   
@@ -336,7 +336,7 @@ public void Put(int id, [FromBody] string value)
 
 
 
-// DELETE api/values/5
+ DELETE api/values/5
 public void Delete(int id)
 {
     degerler.RemoveAt(id);
