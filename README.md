@@ -320,7 +320,9 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
    }
 
    Yukarıdaki durumda Degeler metodu bize değerleri getirsin, DegerGetir metodu bize değeri getirsin DegerEkle metodu eklemeyi, DegerGuncelle  güncellemeyi, DegerSil ise bize silme işlemini yapsın. 
-   Sadece bu hali ile action'ı çalıştırırsak bize 405 hatası vericektir açıklamak gerekirse HTTP istek yöntemini (GET, POST, PUT, DELETE, vb.) desteklemiyor hatasıdır. Bunun anlamı bu şekilde GET isteiğinde bulunamazsıız    anlamına geliyor. Bunu aşmak için aşağıdaki **[HttpGet]** Niteliği (Attribute) eklememiz gerekiyor. 
+   Sadece bu hali ile action'ı çalıştırırsak bize 405 hatası vericektir açıklamak gerekirse HTTP istek yöntemini (GET, POST, PUT, DELETE, vb.) desteklemiyor hatasıdır. Bunun anlamı bu şekilde GET isteiğinde bulunamazsıız    anlamına geliyor. 
+   
+   Bunu aşmak için aşağıdaki **[HttpGet]** Niteliği (Attribute) eklememiz gerekiyor. attribute eklediğimiz taktirde bize 200 code dönecektir. 
 
             // GET api/values
         [HttpGet]
