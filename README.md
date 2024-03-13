@@ -271,4 +271,4 @@ Action Based Routing, bir web uygulamasının URL yapısını ve kullanılabilir
 
 Özetle, Action Based Routing, HTTP isteklerini belirli işlemlere yönlendirmek için URL ve isteğin türüne dayanan bir yönlendirme yöntemidir ve genellikle MVC tabanlı web uygulamalarında kullanılır.
 
-![image](https://photos.google.com/share/AF1QipN8TL6MpVpGAguEuNoSPYB3DuVpFnh6fnY32O-4tQZol9hj9CnBuaS-3WuTzl4TZg/photo/AF1QipMImFX96sdxzLzd31Kn5_QQNwdWwYJOUiUiH3sf?key=OFJyWThXc1NoTUctMG16SUI4X0l4MmVaNTRxMFBn)
+![image](https://flic.kr/p/2pD9Hgw)
