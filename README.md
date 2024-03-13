@@ -298,12 +298,19 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
 static List<string> degerler = new List<string>()
 { "Value0","Value1","Value2"};
 
-//Eski Method isimleri 
+**Eski Method isimleri**
+
+
+
+
 // GET api/values
 public IEnumerable<string> Get()
 {
     return degerler;
 }
+
+
+
 
 // GET api/values/5
 public string Get(int id)
@@ -311,17 +318,23 @@ public string Get(int id)
     return degerler[id];
 }
 
+
+
 // POST api/values
 public void Post([FromBody] string value)
 {
     degerler.Add(value);
 }
 
+
+
 // PUT api/values/5
 public void Put(int id, [FromBody] string value)
 {
     degerler[id] = value;   
 }
+
+
 
 // DELETE api/values/5
 public void Delete(int id)
@@ -330,11 +343,13 @@ public void Delete(int id)
 }
 
 
+
+
 ---
 
 **
 
-//Yeni Method isimleri 
+**Yeni Method isimleri** 
 
 
 static List<string> degerler = new List<string>()
