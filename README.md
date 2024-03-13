@@ -272,14 +272,18 @@ Action Based Routing, bir web uygulamasının URL yapısını ve kullanılabilir
 Özetle, Action Based Routing, HTTP isteklerini belirli işlemlere yönlendirmek için URL ve isteğin türüne dayanan bir yönlendirme yöntemidir ve genellikle MVC tabanlı web uygulamalarında kullanılır.
 
 **Action Based Routing**
+
 Bu kod bir ASP.NET Web API uygulamasında bulunan WebApiConfig sınıfı içerisindeki Register metodu tanımlar. Bu metot, Web API'nin yapılandırılması ve hizmetlerin kaydedilmesi için kullanılır. İşlevlerini aşağıdaki gibi açıklayabiliriz:
 
 config.MapHttpAttributeRoutes();: Bu satır, HTTP yönlendirme özniteliklerini kullanarak tanımlanmış rotaları eşlemek için kullanılır. Yani, Route özniteliği ile işaretlenmiş yönlendirmeleri etkinleştirir.
 
-config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir denetleyiciyi ve eylemi belirten varsayılan bir yönlendirme kuralı tanımlar. Bu örnekte, "DefaultApi" adında bir rota tanımlanmıştır. Bu rota, /api/{controller}/{id} şablonuna uyan istekleri karşılayacaktır. {controller} ve {id} yer tutucular, istekleri karşılayacak olan denetleyici ve isteğe bağlı olarak id parametresini belirtir. Eğer id belirtilmezse, RouteParameter.Optional kullanılarak varsayılan olarak belirtilir. 
+config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir denetleyiciyi ve eylemi belirten varsayılan bir yönlendirme kuralı tanımlar. Bu örnekte, "DefaultApi" adında bir rota tanımlanmıştır. Bu rota, ***/api/{controller}/{id}*** şablonuna uyan istekleri karşılayacaktır. {controller} ve {id} yer tutucular, istekleri karşılayacak olan denetleyici ve isteğe bağlı olarak id parametresini belirtir. Eğer id belirtilmezse, RouteParameter.Optional kullanılarak varsayılan olarak belirtilir. 
 
 https://live.staticflickr.com/65535/53584892586_1da41ac423_c.jpg
 
 ![image](https://live.staticflickr.com/65535/53585308280_66ff5a3c44_n.jpg)
 
 ![image](https://live.staticflickr.com/65535/53584892586_1da41ac423_c.jpg)
+
+Action Based Routing örneğine geçecek olursak WebApiConfig dosyasına giderek aşağıdaki gibi action ifadesininde url'de olacağını belirtiyoruz. Bu durumunda **{controller}** ifadesindne sonra **{action}** ifadesinin geleceğini belirtmiş oluyoruz.
+
