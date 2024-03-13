@@ -332,6 +332,7 @@ public void Delete(int id)
 
 ---
 
+**
 
 //Yeni Method isimleri 
 
@@ -369,3 +370,5 @@ public void Delete(int id)
 {
     degerler.RemoveAt(id);
 }
+
+**
