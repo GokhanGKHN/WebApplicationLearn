@@ -289,7 +289,83 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
 
 ---
 
-Action Based Routing örneğine geçecek olursak WebApiConfig dosyasına giderek aşağıdaki gibi action ifadesininde url'de olacağını belirtiyoruz. Bu durumunda **controller** ifadesindne sonra **action** ifadesinin geleceğini belirtmiş oluyoruz.
+-Action Based Routing örneğine geçecek olursak WebApiConfig dosyasına giderek aşağıdaki gibi action ifadesininde url'de olacağını belirtiyoruz. Bu durumunda **controller** ifadesindne sonra **action** ifadesinin geleceğini belirtmiş oluyoruz.
 
 ![image](https://live.staticflickr.com/65535/53584898961_76e55fc35a_z.jpg)
 
+-Daha sonra controler ValuesController gidip metod isimlerini aşağıdaki gibi güncelleyelim. 
+
+static List<string> degerler = new List<string>()
+{ "Value0","Value1","Value2"};
+
+//Eski Method isimleri 
+// GET api/values
+public IEnumerable<string> Get()
+{
+    return degerler;
+}
+
+// GET api/values/5
+public string Get(int id)
+{
+    return degerler[id];
+}
+
+// POST api/values
+public void Post([FromBody] string value)
+{
+    degerler.Add(value);
+}
+
+// PUT api/values/5
+public void Put(int id, [FromBody] string value)
+{
+    degerler[id] = value;   
+}
+
+// DELETE api/values/5
+public void Delete(int id)
+{
+    degerler.RemoveAt(id);
+}
+
+
+---
+
+
+//Yeni Method isimleri 
+
+
+static List<string> degerler = new List<string>()
+{ "Value0","Value1","Value2"};
+
+//Eski Method isimleri 
+// GET api/values
+public IEnumerable<string> Get()
+{
+    return degerler;
+}
+
+// GET api/values/5
+public string Get(int id)
+{
+    return degerler[id];
+}
+
+// POST api/values
+public void Post([FromBody] string value)
+{
+    degerler.Add(value);
+}
+
+// PUT api/values/5
+public void Put(int id, [FromBody] string value)
+{
+    degerler[id] = value;   
+}
+
+// DELETE api/values/5
+public void Delete(int id)
+{
+    degerler.RemoveAt(id);
+}
