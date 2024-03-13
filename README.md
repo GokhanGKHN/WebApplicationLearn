@@ -242,7 +242,24 @@ Action Based Routing, bir web uygulamasının URL yapısını ve kullanılabilir
 
 **Action Based Routing**
 
-Bu kod bir ASP.NET Web API uygulamasında bulunan WebApiConfig sınıfı içerisindeki Register metodu tanımlar. Bu metot, Web API'nin yapılandırılması ve hizmetlerin kaydedilmesi için kullanılır. İşlevlerini aşağıdaki gibi açıklayabiliriz:
+    public static class WebApiConfig
+    {
+        public static void Register(HttpConfiguration config)
+        {
+            // Web API configuration and services
+
+            // Web API routes
+            config.MapHttpAttributeRoutes();
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+        }
+    }
+
+Yukarıdaki kod bir ASP.NET Web API uygulamasında bulunan WebApiConfig sınıfı içerisindeki Register metodu tanımlar. Bu metot, Web API'nin yapılandırılması ve hizmetlerin kaydedilmesi için kullanılır. İşlevlerini aşağıdaki gibi açıklayabiliriz:
 
 config.MapHttpAttributeRoutes();: Bu satır, HTTP yönlendirme özniteliklerini kullanarak tanımlanmış rotaları eşlemek için kullanılır. Yani, Route özniteliği ile işaretlenmiş yönlendirmeleri etkinleştirir.
 
@@ -258,7 +275,7 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
 
 ---
 
--Action Based Routing örneğine geçecek olursak WebApiConfig dosyasına giderek aşağıdaki gibi action ifadesininde url'de olacağını belirtiyoruz. Bu durumunda **controller** ifadesindne sonra **action** ifadesinin geleceğini belirtmiş oluyoruz.
+-Action Based Routing örneğine geçecek olursak 
 
 ![image](https://live.staticflickr.com/65535/53584898961_76e55fc35a_z.jpg)
 
