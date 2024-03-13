@@ -275,11 +275,64 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
 
 ---
 
--Action Based Routing örneğine geçecek olursak 
+-Action Based Routing örneğine geçecek olursak App_start klasörünün altındaki WebApiConfig.cs dosyasına gelerek {controller} sonra {action} ifadesinin gelenceğini belirtiyoruz. 
 
 ![image](https://live.staticflickr.com/65535/53584898961_76e55fc35a_z.jpg)
 
--Daha sonra controler ValuesController gidip metod isimlerini aşağıdaki gibi güncelleyelim. 
+-Daha sonra controler ValuesController gidip metod isimlerini aşağıdaki gibi güncelleyebiliriz.
 
+   public class ValuesController : ApiController
+   {
+
+       static List<string> degerler = new List<string>()
+       { "Value0","Value1","Value2"};
+
+
+       // GET api/values
+       public IEnumerable<string> Degerler()
+       {
+           return degerler;
+       }
+
+       // GET api/values/5
+       public string DegerGetir(int id)
+       {
+           return degerler[id];
+       }
+
+       // POST api/values
+       public void DegerEkle([FromBody] string value)
+       {
+           degerler.Add(value);
+       }
+
+       // PUT api/values/5
+       public void DegerGuncelle(int id, [FromBody] string value)
+       {
+           degerler[id] = value;   
+       }
+
+       // DELETE api/values/5
+       public void DegerSil(int id)
+       {
+           degerler.RemoveAt(id);
+       }
+   }
+
+   Yukarıdaki durumda Degeler metodu bize değerleri getirsin, DegerGetir metodu bize değeri getirsin DegerEkle metodu eklemeyi, DegerGuncelle  güncellemeyi, DegerSil ise bize silme işlemini yapsın. 
+   Sadece bu hali ile action'ı çalıştırırsak bize 405 hatası vericektir açıklamak gerekirse HTTP istek yöntemini (GET, POST, PUT, DELETE, vb.) desteklemiyor hatasıdır. Bunun anlamı bu şekilde GET isteiğinde bulunamazsıız    anlamına geliyor. Bunu aşmak için aşağıdaki **[HttpGet]** Niteliği (Attribute) eklememiz gerekiyor. 
+
+            // GET api/values
+        [HttpGet]
+        public IEnumerable<string> Degerler()
+        {
+            return degerler;
+        }
+
+
+  
+
+   
+    
 
 
