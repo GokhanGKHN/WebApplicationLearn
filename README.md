@@ -167,39 +167,13 @@ Yeni Bir Ürün Ekleme (**POST** isteği):
 
 ---
 
-**using System;**
-**using System.Collections.Generic;**
-**using System.Linq;**
-**using System.Net;**
-**using System.Net.Http;**
-**using System.Web.Http;**
-
-
-
-
-
-namespace ProductApi.Controllers
-{
-
-
-    public class ProductsController : ApiController
-    {
-
-    
-        private static List<Product> products = new List<Product>
-        {
-            new Product { Id = 1, Name = "Laptop", Price = 999.99 },
-            new Product { Id = 2, Name = "Smartphone", Price = 599.99 },
-            new Product { Id = 3, Name = "Headphones", Price = 99.99 }
-        };
-
-
-
         // GET api/products
         public IHttpActionResult GetProducts()
         {
             return Ok(products);
         }
+
+        
 
         // GET api/products/{id}
         public IHttpActionResult GetProduct(int id)
@@ -210,6 +184,8 @@ namespace ProductApi.Controllers
 
             return Ok(product);
         }
+
+        
 
         // POST api/products
         public IHttpActionResult PostProduct(Product product)
@@ -249,13 +225,6 @@ namespace ProductApi.Controllers
         }
     }
 
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public double Price { get; set; }
-    }
-}
 
 ---
 
@@ -296,54 +265,4 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
 -Daha sonra controler ValuesController gidip metod isimlerini aşağıdaki gibi güncelleyelim. 
 
 
-
-**using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;**
-
-
-
-namespace WebApplicationOne.Controllers
-{
-    public class ValuesController : ApiController
-    {
-
-        static List<string> degerler = new List<string>()
-        { "Value0","Value1","Value2"};
-
-
-        // GET api/values
-        public IEnumerable<string> Get()
-        {
-            return degerler;
-        }
-
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return degerler[id];
-        }
-
-        // POST api/values
-        public void Post([FromBody] string value)
-        {
-            degerler.Add(value);
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
-        {
-            degerler[id] = value;   
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-            degerler.RemoveAt(id);
-        }
-    }
-}
 
