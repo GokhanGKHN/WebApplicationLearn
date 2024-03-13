@@ -279,11 +279,17 @@ config.MapHttpAttributeRoutes();: Bu satır, HTTP yönlendirme özniteliklerini 
 
 config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir denetleyiciyi ve eylemi belirten varsayılan bir yönlendirme kuralı tanımlar. Bu örnekte, "DefaultApi" adında bir rota tanımlanmıştır. Bu rota, ***/api/{controller}/{id}*** şablonuna uyan istekleri karşılayacaktır. {controller} ve {id} yer tutucular, istekleri karşılayacak olan denetleyici ve isteğe bağlı olarak id parametresini belirtir. Eğer id belirtilmezse, RouteParameter.Optional kullanılarak varsayılan olarak belirtilir. 
 
-https://live.staticflickr.com/65535/53584892586_1da41ac423_c.jpg
+--
 
 ![image](https://live.staticflickr.com/65535/53585308280_66ff5a3c44_n.jpg)
 
+--
+
 ![image](https://live.staticflickr.com/65535/53584892586_1da41ac423_c.jpg)
 
+--
+
 Action Based Routing örneğine geçecek olursak WebApiConfig dosyasına giderek aşağıdaki gibi action ifadesininde url'de olacağını belirtiyoruz. Bu durumunda **{controller}** ifadesindne sonra **{action}** ifadesinin geleceğini belirtmiş oluyoruz.
+
+![image](https://live.staticflickr.com/65535/53584898961_76e55fc35a_z.jpg)
 
