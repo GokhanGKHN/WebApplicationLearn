@@ -258,3 +258,17 @@ namespace ProductApi.Controllers
 }
 
 ---
+
+**ASP.Net Web Api Routing (Action Based Routing)?**
+
+Action Based Routing, bir web uygulamasında HTTP isteklerini belirli işlemlere (action) yönlendirmek için kullanılan bir yönlendirme yöntemidir. Bu tür yönlendirme genellikle MVC (Model-View-Controller) mimarisine dayalı web uygulamalarında kullanılır.
+
+Action Based Routing, bir HTTP isteğinin geldiği URL ve isteğin türüne (GET, POST, PUT, DELETE vb.) bakarak hangi işlemin gerçekleştirileceğini belirler. Bu yöntemde, isteğin URL'si ve isteğin türü, bir Controller sınıfındaki belirli bir Action metoduyla eşleştirilir.
+
+Örneğin, bir web uygulamasında "/products" URL'sine yapılan bir HTTP GET isteği, "ProductsController" adlı bir Controller sınıfındaki "GetProducts" adlı bir Action metoduyla eşleştirilebilir. Benzer şekilde, "/products/create" URL'sine yapılan bir HTTP GET isteği, yine "ProductsController" sınıfındaki "Create" adlı bir Action metoduyla eşleştirilebilir.
+
+Action Based Routing, bir web uygulamasının URL yapısını ve kullanılabilir işlemleri (action'ları) belirlemek için oldukça esnek bir yöntemdir. Bu sayede, istemcilere daha anlaşılır ve kolay kullanılabilir bir API sunulabilir.
+
+Özetle, Action Based Routing, HTTP isteklerini belirli işlemlere yönlendirmek için URL ve isteğin türüne dayanan bir yönlendirme yöntemidir ve genellikle MVC tabanlı web uygulamalarında kullanılır.
+
+![resim](https://drive.google.com/file/d/1t5gnYlAd3cVRHpd5EYYC0UQViQ6pBIn2/view?usp=drive_link)
