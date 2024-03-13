@@ -295,95 +295,55 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
 
 -Daha sonra controler ValuesController gidip metod isimlerini aşağıdaki gibi güncelleyelim. 
 
-static List<string> degerler = new List<string>()
-{ "Value0","Value1","Value2"};
-
-**Eski Method isimleri**
 
 
+**using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;**
 
 
- GET api/values
-public IEnumerable<string> Get()
+
+namespace WebApplicationOne.Controllers
 {
-    return degerler;
+    public class ValuesController : ApiController
+    {
+
+        static List<string> degerler = new List<string>()
+        { "Value0","Value1","Value2"};
+
+
+        // GET api/values
+        public IEnumerable<string> Get()
+        {
+            return degerler;
+        }
+
+        // GET api/values/5
+        public string Get(int id)
+        {
+            return degerler[id];
+        }
+
+        // POST api/values
+        public void Post([FromBody] string value)
+        {
+            degerler.Add(value);
+        }
+
+        // PUT api/values/5
+        public void Put(int id, [FromBody] string value)
+        {
+            degerler[id] = value;   
+        }
+
+        // DELETE api/values/5
+        public void Delete(int id)
+        {
+            degerler.RemoveAt(id);
+        }
+    }
 }
 
-
-
-
- GET api/values/5
-public string Get(int id)
-{
-    return degerler[id];
-}
-
-
-
- POST api/values
-public void Post([FromBody] string value)
-{
-    degerler.Add(value);
-}
-
-
-
- PUT api/values/5
-public void Put(int id, [FromBody] string value)
-{
-    degerler[id] = value;   
-}
-
-
-
- DELETE api/values/5
-public void Delete(int id)
-{
-    degerler.RemoveAt(id);
-}
-
-
-
-
----
-
-**
-
-**Yeni Method isimleri** 
-
-
-static List<string> degerler = new List<string>()
-{ "Value0","Value1","Value2"};
-
-//Eski Method isimleri 
-// GET api/values
-public IEnumerable<string> Get()
-{
-    return degerler;
-}
-
-// GET api/values/5
-public string Get(int id)
-{
-    return degerler[id];
-}
-
-// POST api/values
-public void Post([FromBody] string value)
-{
-    degerler.Add(value);
-}
-
-// PUT api/values/5
-public void Put(int id, [FromBody] string value)
-{
-    degerler[id] = value;   
-}
-
-// DELETE api/values/5
-public void Delete(int id)
-{
-    degerler.RemoveAt(id);
-}
-
-**
