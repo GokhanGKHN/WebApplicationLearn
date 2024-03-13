@@ -289,7 +289,7 @@ config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir d
 
 ---
 
-Action Based Routing örneğine geçecek olursak WebApiConfig dosyasına giderek aşağıdaki gibi action ifadesininde url'de olacağını belirtiyoruz. Bu durumunda **{controller}** ifadesindne sonra **{action}** ifadesinin geleceğini belirtmiş oluyoruz.
+Action Based Routing örneğine geçecek olursak WebApiConfig dosyasına giderek aşağıdaki gibi action ifadesininde url'de olacağını belirtiyoruz. Bu durumunda **controller** ifadesindne sonra **action** ifadesinin geleceğini belirtmiş oluyoruz.
 
 ![image](https://live.staticflickr.com/65535/53584898961_76e55fc35a_z.jpg)
 
