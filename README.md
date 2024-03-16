@@ -167,83 +167,27 @@ Yeni Bir Ürün Ekleme (**POST** isteği):
 
 ---
 
-        // GET api/products
-        public IHttpActionResult GetProducts()
-        {
-            return Ok(products);
-        }
+# **Convention Based Routing Kavramı**
 
-        
+Convention Based Routing, web uygulamalarında URL yönlendirmesi yapmak için kullanılan bir yönlendirme tekniğidir.
 
-        // GET api/products/{id}
-        public IHttpActionResult GetProduct(int id)
-        {
-            var product = products.FirstOrDefault(p => p.Id == id);
-            if (product == null)
-                return NotFound();
+Bu yaklaşım, URL'lerin belirli bir kalıba uygun olarak düzenlenmesine ve bu kalıplara dayalı olarak isteklerin doğru controller'a yönlendirilmesine dayanır.
 
-            return Ok(product);
-        }
+[ASP.NET](http://asp.net/) gibi çerçevelerde, Convention Based Routing genellikle RouteTable sınıfı veya benzer bir mekanizma aracılığıyla yapılandırılır. Örneğin, bir URL "**/products/{id}"** gibi bir yapıya sahipse, bu URL bir ürünün detaylarını göstermek için kullanılabilir ve **"{id}"** bölümü, ilgili ürünün kimliğini belirtir.
 
-        
+Bu yöntemin temel amacı, bir web uygulamasındaki URL'leri tutarlı bir şekilde yapılandırmak ve kodu daha organize etmek için belirli bir model veya kurallar setine dayanarak URL'leri oluşturmaktır. Bu sayede, uygulamanın bakımı ve geliştirilmesi daha kolay hale gelir çünkü URL'ler ve ilgili işlemler arasında doğrudan bir ilişki vardır.
 
-        // POST api/products
-        public IHttpActionResult PostProduct(Product product)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+Convention Based Routing'in faydaları şunlardır:
 
-            products.Add(product);
-            return CreatedAtRoute("DefaultApi", new { id = product.Id }, product);
-        }
+1. **Daha okunabilir URL'ler**: Belirli bir kalıba uygun URL'ler, kullanıcılar için daha anlaşılır ve hatırlanabilir olabilir.
+2. **Kod organizasyonu**: URL'leri doğrudan controller'lara yönlendirmek, kodun düzenli ve organize olmasını sağlar. Her URL için ayrı bir yönlendirme tanımlamak yerine, belirli bir model veya kalıba dayalı olarak URL'leri işlemek daha az kod yazmayı ve daha az bakım gerektirir.
+3. **Mantıklı kod yönetimi**: URL yapılandırması ve yönlendirme kuralları, kodun belirli bir model veya mantık etrafında yapılandırılmasını sağlar. Bu, yeni özellikler eklerken veya mevcutları değiştirirken daha tutarlı bir yaklaşım sunar.
+4. **Gelecek güncellemelere hazırlık**: URL kalıpları, uygulamanın gelecekteki güncellemelerine uyum sağlamak için esneklik sağlar. Yeni özellikler eklenirken veya var olanlar değiştirilirken, mevcut URL yapılarını değiştirmeden sadece yeni yönlendirme kuralları eklemek veya güncellemek mümkündür.
 
-        // PUT api/products/{id}
-        public IHttpActionResult PutProduct(int id, Product product)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+Genel olarak, Convention Based Routing, web uygulamalarının URL yönlendirme sürecini basitleştirir, bakımını kolaylaştırır ve kodun daha düzenli ve okunabilir olmasını sağlar. Bu nedenle, birçok web geliştirme çerçevesinde sıkça kullanılan bir yönlendirme yöntemidir.
 
-            var existingProduct = products.FirstOrDefault(p => p.Id == id);
-            if (existingProduct == null)
-                return NotFound();
+Bir Apı işlemi için yazılacak url, domain'den sonra api/{controller} adıdır. 
 
-            existingProduct.Name = product.Name;
-            existingProduct.Price = product.Price;
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // DELETE api/products/{id}
-        public IHttpActionResult DeleteProduct(int id)
-        {
-            var product = products.FirstOrDefault(p => p.Id == id);
-            if (product == null)
-                return NotFound();
-
-            products.Remove(product);
-            return Ok(product);
-        }
-    }
-
-
----
-
-**ASP.Net Web Api Routing (Action Based Routing)?**
-
-Action Based Routing, bir web uygulamasında HTTP isteklerini belirli işlemlere (action) yönlendirmek için kullanılan bir yönlendirme yöntemidir. Bu tür yönlendirme genellikle MVC (Model-View-Controller) mimarisine dayalı web uygulamalarında kullanılır.
-
-Action Based Routing, bir HTTP isteğinin geldiği URL ve isteğin türüne (GET, POST, PUT, DELETE vb.) bakarak hangi işlemin gerçekleştirileceğini belirler. Bu yöntemde, isteğin URL'si ve isteğin türü, bir Controller sınıfındaki belirli bir Action metoduyla eşleştirilir.
-
-Örneğin, bir web uygulamasında "/products" URL'sine yapılan bir HTTP GET isteği, "ProductsController" adlı bir Controller sınıfındaki "GetProducts" adlı bir Action metoduyla eşleştirilebilir. Benzer şekilde, "/products/create" URL'sine yapılan bir HTTP GET isteği, yine "ProductsController" sınıfındaki "Create" adlı bir Action metoduyla eşleştirilebilir.
-
-Action Based Routing, bir web uygulamasının URL yapısını ve kullanılabilir işlemleri (action'ları) belirlemek için oldukça esnek bir yöntemdir. Bu sayede, istemcilere daha anlaşılır ve kolay kullanılabilir bir API sunulabilir.
-
-Özetle, Action Based Routing, HTTP isteklerini belirli işlemlere yönlendirmek için URL ve isteğin türüne dayanan bir yönlendirme yöntemidir ve genellikle MVC tabanlı web uygulamalarında kullanılır.
-
-**Action Based Routing**
-
-    public static class WebApiConfig
-    {
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
@@ -253,88 +197,67 @@ Action Based Routing, bir web uygulamasının URL yapısını ve kullanılabilir
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{action}/{id}",
+                routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
+
+
+
+
+{controller} adı aşağıdaki sınıfın ön eki yani "Values" olacak. Aşağıdaki GET,POST,PUT ve DELETE metotlarının ön ekleri varsayılan olarak gelir. Hangi isteğin gerçekleşeceği ön ek üzerinden anlaşıldığı için buradaki isimlendirme önemli.  
+
+public class **Values**Controller : ApiController
+{
+    // GET api/values
+    public IEnumerable<string> Get()
+    {
+        return new string[] { "bili", "bili" };
     }
 
-Yukarıdaki kod bir ASP.NET Web API uygulamasında bulunan WebApiConfig sınıfı içerisindeki Register metodu tanımlar. Bu metot, Web API'nin yapılandırılması ve hizmetlerin kaydedilmesi için kullanılır. İşlevlerini aşağıdaki gibi açıklayabiliriz:
+    // GET api/values/5
+    public string Get(int id)
+    {
+        return "value";
+    }
 
-config.MapHttpAttributeRoutes();: Bu satır, HTTP yönlendirme özniteliklerini kullanarak tanımlanmış rotaları eşlemek için kullanılır. Yani, Route özniteliği ile işaretlenmiş yönlendirmeleri etkinleştirir.
+    // POST api/values
+    public void Post([FromBody] string value)
+    {
+    }
 
-config.Routes.MapHttpRoute(...): Bu satır, belirli bir HTTP isteği için bir denetleyiciyi ve eylemi belirten varsayılan bir yönlendirme kuralı tanımlar. Bu örnekte, "DefaultApi" adında bir rota tanımlanmıştır. Bu rota, ***/api/{controller}/{id}*** şablonuna uyan istekleri karşılayacaktır. {controller} ve {id} yer tutucular, istekleri karşılayacak olan denetleyici ve isteğe bağlı olarak id parametresini belirtir. Eğer id belirtilmezse, RouteParameter.Optional kullanılarak varsayılan olarak belirtilir. 
+    // PUT api/values/5
+    public void Put(int id, [FromBody] string value)
+    {
+    }
+
+    // DELETE api/values/5
+    public void Delete(int id)
+    {
+    }
+}
 
 ---
 
-![image](https://live.staticflickr.com/65535/53585308280_66ff5a3c44_n.jpg)
+Fiddler, bir web debugging proxy aracı. Bu araç, bilgisayarınız ve internet arasındaki iletişimi izlemenize ve analiz etmenize olanak tanıyor. Fiddler, HTTP/HTTPS trafiğini izleyebilir, istek ve cevapları inceleyebilir, trafikteki değişiklikleri yapabilir ve hata ayıklama işlemlerini kolaylaştırabilir.
 
----
+Aşağıdaki örnekte fiddler uygulamasını kullancağım. Aşağıdaki ekran görüntüsüne baktığımızda domain'den sonra controller ön ek adı ve sol tarafından http isteğini görüyoruz. Response olarakta 200 yanıtının aldığını görünüyor. 
 
-![image](https://live.staticflickr.com/65535/53584892586_1da41ac423_c.jpg)
+resim bir 
 
----
+Aşağıdaki response çift tıklayarak incelediğimizde bili, bili olarak JSON türünde response'un döndüğünü görüyoruz. Response'un header'ında 200 kodlu başarılı olduğunu görüyoruz. 
 
--Action Based Routing örneğine geçecek olursak App_start klasörünün altındaki WebApiConfig.cs dosyasına gelerek {controller} sonra {action} ifadesinin gelenceğini belirtiyoruz. 
+resim iki 
 
-![image](https://live.staticflickr.com/65535/53584898961_76e55fc35a_z.jpg)
+JSON sekmesine geldiğinizde değerleri görüyoruz. zaten projede "bili,bili" getireceğini söylüyordu. 
 
--Daha sonra controler ValuesController gidip metod isimlerini aşağıdaki gibi güncelleyebiliriz.
-
-   public class ValuesController : ApiController
-   {
-
-       static List<string> degerler = new List<string>()
-       { "Value0","Value1","Value2"};
-
-
-       // GET api/values
-       public IEnumerable<string> Degerler()
-       {
-           return degerler;
-       }
-
-       // GET api/values/5
-       public string DegerGetir(int id)
-       {
-           return degerler[id];
-       }
-
-       // POST api/values
-       public void DegerEkle([FromBody] string value)
-       {
-           degerler.Add(value);
-       }
-
-       // PUT api/values/5
-       public void DegerGuncelle(int id, [FromBody] string value)
-       {
-           degerler[id] = value;   
-       }
-
-       // DELETE api/values/5
-       public void DegerSil(int id)
-       {
-           degerler.RemoveAt(id);
-       }
-   }
-
-   Yukarıdaki durumda Degeler metodu bize değerleri getirsin, DegerGetir metodu bize değeri getirsin DegerEkle metodu eklemeyi, DegerGuncelle  güncellemeyi, DegerSil ise bize silme işlemini yapsın. 
-   Sadece bu hali ile action'ı çalıştırırsak bize 405 hatası vericektir açıklamak gerekirse HTTP istek yöntemini (GET, POST, PUT, DELETE, vb.) desteklemiyor hatasıdır. Bunun anlamı bu şekilde GET isteğinde bulunamazsına     gelir.  
-   
-   Bunu aşmak için aşağıdaki **[HttpGet]** Niteliği (Attribute) eklememiz gerekiyor. attribute eklediğimiz taktirde bize 200 status code dönecektir. 
-
-            // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Degerler()
+        // GET api/values
+        public IEnumerable<string> Get()
         {
-            return degerler;
+            return new string[] { "bili", "bili" };
         }
 
+resim 3
 
-  
-
-   
-    
 
 
